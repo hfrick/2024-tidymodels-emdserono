@@ -1,0 +1,711 @@
+---
+title: ""
+format: 
+  revealjs:
+    theme: [default, tidymodels.scss]
+    footer: '<span style="color:#CA225E;">github.com/hfrick/2024-tidymodels-emdserono</span>'
+editor: source
+knitr:
+  opts_chunk: 
+    echo: true
+    collapse: true
+    comment: "#>"
+---
+
+```{r setup}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidymodels)
+library(censored)
+library(survminer)
+
+options(width = 70)
+
+theme_set(theme_minimal(base_size = 20))
+```
+
+##  {.title background-image="figures/hero.png"}
+
+## `r emo::ji("wave")` Who am I?
+
+<!-- who am i? -->
+
+::: columns
+::: {.column width="25%"}
+:::
+
+::: columns
+::: {.column width="25%"}
+![](figures/avatars/hannah.png) ![](figures/avatars/empty.png)
+:::
+
+::: {.column width="25%"}
+![](figures/avatars/empty.png) ![](figures/avatars/empty.png)
+:::
+:::
+
+::: {.column width="25%"}
+:::
+:::
+
+------------------------------------------------------------------------
+
+## `r emo::ji("wave")` Who are we?
+
+<!-- who are we? -->
+
+::: columns
+::: {.column width="25%"}
+:::
+
+::: columns
+::: {.column width="25%"}
+![](figures/avatars/hannah.png) ![](figures/avatars/emil.png)
+:::
+
+::: {.column width="25%"}
+![](figures/avatars/simon.png) ![](figures/avatars/max.png)
+:::
+:::
+
+::: {.column width="25%"}
+:::
+:::
+
+------------------------------------------------------------------------
+
+## `r emo::ji("wave")` Who are you?
+
+. . .
+
+<br>
+
+-  What is your role?
+-  What kind of problems do you work on?
+
+## Roadmap
+
+::: incremental
+-   What is tidymodels?
+-   Why tidymodels?
+-   Applied example `r emo::ji("telephone_receiver")`
+-   Resources
+:::
+
+# {background-color="#CA225E"}
+
+<center>github.com/hfrick/2024-tidymodels-emdserono</center>
+
+# What is tidymodels? {background-color="#CA225E"}
+
+------------------------------------------------------------------------
+
+<br>
+
+> *The tidymodels framework is a collection of packages for modeling and machine learning using tidyverse principles.*
+>
+> <p style="text-align:right;">
+>
+> \- tidymodels.org
+>
+> </p>
+
+. . .
+
+<br>
+
+...so what is modeling and machine learning?
+
+## BYO Venn Diagram
+
+![](figures/byo_venn_diagram.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+<br><br>
+
+> *The tidymodels framework is a collection of packages for safe, performant, and expressive supervised predictive modeling on tabular data.*
+
+. . .
+
+<br>
+
+`r emo::ji("woozy_face")`
+
+------------------------------------------------------------------------
+
+<br><br>
+
+> *The tidymodels framework is a collection of packages for safe, performant, and expressive [supervised predictive modeling]{style="color:#CA225E"} on tabular data.*
+
+<br>
+
+`r emo::ji("woozy_face")`
+
+------------------------------------------------------------------------
+
+<br><br>
+
+> *The tidymodels framework is a collection of packages for safe, performant, and expressive supervised predictive modeling on [tabular data]{style="color:#CA225E"}.*
+
+<br>
+
+`r emo::ji("woozy_face")`
+
+------------------------------------------------------------------------
+
+<br><br>
+
+> *The tidymodels framework is a collection of packages for [safe, performant, and expressive]{style="color:#CA225E"} supervised predictive modeling on tabular data.*
+
+<br>
+
+`r emo::ji("woozy_face")`
+
+------------------------------------------------------------------------
+
+<br><br>
+
+> *The tidymodels framework is a collection of packages for safe, performant, and expressive supervised predictive modeling on tabular data.*
+
+<br>
+
+`r emo::ji("woozy_face")`
+
+. . .
+
+<br>
+
+Think about the modeling problem, not the syntax.
+
+<!-- ## -->
+
+<!-- ![](https://vetiver.rstudio.com/images/ml_ops_cycle.png){fig-align="center"} -->
+
+
+# Why tidymodels? {background-color="#CA225E"}
+
+## Why tidymodels?  *Consistency*
+
+. . .
+
+How many different ways can you think of to fit a linear model in R?
+
+. . .
+
+The blessing:
+
+-   Many statistical modeling practitioners implement methods in R
+
+The curse:
+
+-   Many statistical modeling practitioners implement methods in R
+
+## Why tidymodels?  *Consistency*
+
+```{r}
+mtcars
+```
+
+## Why tidymodels?  *Consistency*
+
+::: columns
+::: {.column width="50%"}
+With `lm()`:
+
+```{r eng-lm-model}
+#| echo: true
+#| eval: false
+model <- 
+  lm(mpg ~ ., mtcars)
+```
+:::
+
+::: {.column width="50%"}
+With tidymodels:
+
+```{r tm-lm}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|3"
+model <-
+  linear_reg() %>%
+  set_engine("lm") %>%
+  fit(mpg ~ ., mtcars)
+```
+:::
+:::
+
+## Why tidymodels?  *Consistency*
+
+::: columns
+::: {.column width="50%"}
+With glmnet:
+
+```{r eng-glmnet-model}
+#| echo: true
+#| eval: false
+model <- 
+  glmnet(
+    as.matrix(mtcars[2:11]),
+    mtcars$mpg
+  )
+```
+:::
+
+::: {.column width="50%"}
+With tidymodels:
+
+```{r tm-glmnet}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "3"
+model <-
+  linear_reg() %>%
+  set_engine("glmnet") %>%
+  fit(mpg ~ ., mtcars)
+```
+:::
+:::
+
+## Why tidymodels?  *Consistency*
+
+::: columns
+::: {.column width="50%"}
+With h2o:
+
+```{r eng-h2o-model}
+#| echo: true
+#| eval: false
+h2o.init()
+as.h2o(mtcars, "cars")
+
+model <- 
+  h2o.glm(
+    x = colnames(mtcars[2:11]), 
+    y = "mpg",
+    "cars"
+  )
+```
+:::
+
+::: {.column width="50%"}
+With tidymodels:
+
+```{r tm-h2o}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "3|"
+model <-
+  linear_reg() %>%
+  set_engine("h2o") %>%
+  fit(mpg ~ ., mtcars)
+```
+:::
+:::
+
+<!-- ## Why tidymodels?  *Consistency* -->
+
+## Why tidymodels?  *Safety*[^1]
+
+[^1]: 10.1097/01.psy.0000127692.23278.a9, 10.1016/j.patter.2023.100804, 10.1609/aaai.v32i1.11694
+
+## Why tidymodels?  *Safety*[^2]
+
+[^2]: 10.1097/01.psy.0000127692.23278.a9, 10.1016/j.patter.2023.100804, 10.1609/aaai.v32i1.11694
+
+-   **Overfitting** leads to analysts believing models are more performant than they actually are.
+
+. . .
+
+-   A 2023 review found **data leakage** to be "a widespread failure mode in machine-learning (ML)-based science."
+
+. . .
+
+-   Implementations of the same machine learning model give differing results, resulting in **irreproducibility** of modeling results.
+
+
+## Why tidymodels?  *Completeness*
+
+![](figures/whole-game-final.jpeg)
+
+<!-- ------------------------------------------------------------------------ -->
+
+## Why tidymodels?  *Completeness*
+
+```{r make-model-options}
+#| message: false
+#| warning: false
+#| eval: true
+#| echo: false
+library(parsnip)
+library(tidyverse)
+
+x <- lapply(parsnip:::extensions(), require, character.only = TRUE)
+
+model_options <-
+  parsnip::get_model_env() %>%
+  as.list() %>%
+  enframe() %>%
+  filter(grepl("pkgs", name)) %>%
+  mutate(name = gsub("_pkgs", "", name)) %>%
+  unnest(value) %>%
+  distinct(name, engine)
+```
+
+Built-in support for `r nrow(model_options)` machine learning models!
+
+```{r print-model-options}
+#| echo: false
+#| collapse: false
+model_options
+```
+
+<!-- ------------------------------------------------------------------------ -->
+
+## Why tidymodels?  *Completeness*
+
+```{r make-recipes-options}
+#| message: false
+#| warning: false
+#| eval: true
+#| echo: false
+library(tidyverse)
+
+recipes_pkgs <- c("recipes", "textrecipes", "themis")
+
+read_ns <- function(pkg) {
+  asNamespace("recipes") %>%
+    pluck(".__NAMESPACE__.", "exports") %>%
+    as.list() %>%
+    enframe()
+}
+
+step_options <-
+  map(recipes_pkgs, read_ns) %>%
+  bind_rows() %>%
+  filter(grepl("step", name)) %>%
+  distinct(name)
+```
+
+Built-in support for `r nrow(step_options)` data pre-processing techniques!
+
+```{r print-recipes-options}
+#| echo: false
+#| collapse: false
+step_options
+```
+
+## Why tidymodels?  *Extensibility*
+
+. . .
+
+Can't find the technique you need?
+
+. . .
+
+![](https://media.tenor.com/Yw6STFBZk_8AAAAC/not-a-problem-thumbs-up.gif){fig-align="center" width="60%"}
+
+<!-- ## Why tidymodels?  *Extensibility* -->
+
+
+
+
+
+
+
+
+# Applied example {background-color="#CA225E"}
+
+## Coming to tidymodels: Survival analysis
+
+::: {.incremental}
+- For time-to-event data with censoring
+- Release cascade underway!
+- Dedicated models and metrics
+- General framework goodies unlocked `r emo::ji("tada")`
+:::
+
+
+## Try it out yourself
+
+<br>
+Install the release version
+
+```
+pak::pak("tidymodels")
+```
+
+. . .
+
+<br>
+
+Install the development version of 
+
+```
+pak::pak(paste0("tidymodels/", c("tune", "finetune", "workflowsets")))
+```
+
+## Customer churn
+
+```{r}
+#| eval: false
+wa_churn
+```
+
+<!-- . . . -->
+
+```{r}
+#| echo: false
+data("wa_churn", package = "modeldata")
+
+wa_churn <- wa_churn %>%
+  drop_na() %>%
+  mutate(
+    multiple_lines = if_else(multiple_lines == "No phone service", "No", multiple_lines),
+    across(all_of(c("online_security", "online_backup",
+                    "device_protection", "tech_support", "streaming_tv", 
+                    "streaming_movies")), 
+           ~ if_else(.x == "No internet service", "No", .x))
+  ) %>% 
+  select(-contract, -total_charges)
+
+print(wa_churn, n = 6)
+```
+
+. . .
+
+::: callout-note
+See [`/example/churn.R`](https://github.com/hfrick/2024-tidymodels-emdserono/blob/main/example/churn.R) for the actual code to generate this data!
+:::
+
+## Customer churn
+
+```{r}
+#| echo: false
+#| fig-align: "center"
+#| width: "30%"
+ggplot(wa_churn) + geom_bar(aes(churn))
+```
+
+. . .
+
+Around `r round(mean(wa_churn$churn == "Yes"), 3) * 100`% of customers have churned.
+
+## Customer churn
+
+```{r}
+telco_churn <- wa_churn %>% 
+  mutate(
+    churn_surv = Surv(tenure, if_else(churn == "Yes", 1, 0)),
+    .keep = "unused"
+  )
+```
+
+## Split the data
+
+```{r}
+#| code-line-numbers: "1-2|3-4|6"
+set.seed(403)
+telco_split <- initial_split(telco_churn)
+telco_train <- training(telco_split)
+telco_test <- testing(telco_split)
+
+telco_rs <- vfold_cv(telco_train)
+```
+
+
+## Customer churn
+
+```{r}
+#| echo: false
+#| fig-align: "center"
+#| width: "30%"
+survfit(churn_surv ~ 1, data = telco_train) %>% ggsurvplot(legend = "none")
+```
+
+## Customer churn
+
+```{r}
+#| echo: false
+#| fig-align: "center"
+#| width: "30%"
+survfit(churn_surv ~ partner, data = telco_train) %>% ggsurvplot() 
+```
+
+## Preprocessing
+
+```{r}
+#| code-line-numbers: "1-2|4|4-9"
+telco_rec <- recipe(churn_surv ~ ., data = telco_train) %>% 
+  step_zv(all_predictors()) 
+
+telco_rec_streaming <- telco_rec %>%
+  step_mutate(
+    streaming = factor(if_else(streaming_tv == "Yes" | 
+                                 streaming_movies == "Yes", "Yes", "No"))
+  ) %>% 
+  step_rm(streaming_tv, streaming_movies)
+```
+
+## Baseline model
+
+```{r}
+#| code-line-numbers: "1|3-5"
+spec_surv_reg <- survival_reg()
+
+wflow_surv_reg <- workflow() %>%
+  add_recipe(telco_rec) %>%
+  add_model(spec_surv_reg)
+```
+
+## Baseline model
+
+```{r}
+#| code-line-numbers: "1-2|3-4|5-9|"
+set.seed(12)
+sr_rs_fit <- fit_resamples(
+  wflow_surv_reg, 
+  telco_rs, 
+  metrics = metric_set(brier_survival_integrated,
+                       brier_survival,
+                       roc_auc_survival,
+                       concordance_survival), 
+  eval_time = c(1, 6, 12, 18, 24, 36, 48, 60)
+)
+```
+
+## Baseline model
+
+```{r}
+collect_metrics(sr_rs_fit)
+
+show_best(sr_rs_fit, metric = "brier_survival_integrated")
+```
+
+## Tune a model
+
+```{r}
+#| code-line-numbers: "2-6|7-8|"
+spec_tree <- 
+  decision_tree(
+    tree_depth = tune(), 
+    min_n = tune(),
+    cost_complexity = tune()
+  ) %>% 
+  set_engine("rpart") %>%
+  set_mode("censored regression")
+
+wflow_tree <- workflow() %>%
+  add_recipe(telco_rec) %>%
+  add_model(spec_tree)
+```
+
+## Tune a model
+
+```{r}
+#| cache: true
+#| code-line-numbers: "2|5|"
+set.seed(12) 
+tree_res <- tune_grid(
+  wflow_tree, 
+  telco_rs, 
+  grid = 10,
+  metrics = metric_set(brier_survival_integrated, 
+                       brier_survival,
+                       roc_auc_survival, 
+                       concordance_survival), 
+  eval_time = c(1, 6, 12, 18, 24, 36, 48, 60)
+)
+```
+
+## Tune a model
+
+```{r}
+show_best(tree_res, metric = "brier_survival_integrated")
+```
+
+## Finalize a model
+
+```{r}
+#| code-line-numbers: "1|2|4|"
+best_param <- select_best(tree_res, metric = "brier_survival_integrated")
+wflow_tree <- finalize_workflow(wflow_tree, best_param)
+
+churn_mod <- fit(wflow_tree, telco_train)
+
+predict(churn_mod, telco_test, type = "time")
+```
+
+
+## workflowsets - The kitchen sink
+
+::: columns
+::: {.column width="50%"}
+Preprocessors:
+
+-   formula
+-   combine streaming indicators
+-   center and scale predictors
+-   PCA + center and scale predictors
+:::
+::: {.column width="50%"}
+...and models:
+
+-   parametric survival regression
+-   proportional hazards model
+-   decision tree
+-   random forest
+-   bagged decision tree
+-   boosted tree
+:::
+:::
+
+<!-- ## Customer churn -->
+
+<!-- <br> -->
+
+<!-- See how we carried that analysis out here: -->
+
+<!-- <center>[github.com/hfrick/2024-tidymodels-emdserono]{style="color:#CA225E;"}</center> -->
+
+
+# Resources {background-color="#CA225E"}
+
+## Resources
+
+::: columns
+::: {.column width="50%"}
+-   tidyverse: [r4ds.hadley.nz]{style="color:#CA225E;"}
+:::
+
+::: {.column width="50%"}
+![](https://r4ds.hadley.nz/cover.jpg){height="550"}
+:::
+:::
+
+## Resources
+
+::: columns
+::: {.column width="50%"}
+-   tidyverse: [r4ds.hadley.nz]{style="color:#CA225E;"}
+-   tidymodels: [tmwr.org]{style="color:#CA225E;"}
+:::
+
+::: {.column width="50%"}
+![](https://www.tmwr.org/images/cover.png){height="550"}
+:::
+:::
+
+## Resources
+
+-   tidyverse: [r4ds.hadley.nz]{style="color:#CA225E;"}
+-   tidymodels: [tmwr.org]{style="color:#CA225E;"}
+-   Slides and code:
+
+<center>[github.com/hfrick/2024-tidymodels-emdserono]{style="color:#CA225E;"}</center>
+
+. . .
+
+Thank you!

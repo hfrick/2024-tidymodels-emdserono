@@ -1,0 +1,254 @@
+[
+  {
+    "objectID": "index.html#who-am-i",
+    "href": "index.html#who-am-i",
+    "title": "",
+    "section": "👋 Who am I?",
+    "text": "👋 Who am I?"
+  },
+  {
+    "objectID": "index.html#who-are-we",
+    "href": "index.html#who-are-we",
+    "title": "",
+    "section": "👋 Who are we?",
+    "text": "👋 Who are we?"
+  },
+  {
+    "objectID": "index.html#who-are-you",
+    "href": "index.html#who-are-you",
+    "title": "",
+    "section": "👋 Who are you?",
+    "text": "👋 Who are you?\n\n\n\nWhat is your role?\nWhat kind of problems do you work on?"
+  },
+  {
+    "objectID": "index.html#roadmap",
+    "href": "index.html#roadmap",
+    "title": "",
+    "section": "Roadmap",
+    "text": "Roadmap\n\n\nWhat is tidymodels?\nWhy tidymodels?\nApplied example 📞\nResources"
+  },
+  {
+    "objectID": "index.html#byo-venn-diagram",
+    "href": "index.html#byo-venn-diagram",
+    "title": "",
+    "section": "BYO Venn Diagram",
+    "text": "BYO Venn Diagram"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-consistency",
+    "href": "index.html#why-tidymodels-consistency",
+    "title": "",
+    "section": "Why tidymodels?  Consistency",
+    "text": "Why tidymodels?  Consistency\n\nHow many different ways can you think of to fit a linear model in R?\n\n\nThe blessing:\n\nMany statistical modeling practitioners implement methods in R\n\nThe curse:\n\nMany statistical modeling practitioners implement methods in R"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-consistency-1",
+    "href": "index.html#why-tidymodels-consistency-1",
+    "title": "",
+    "section": "Why tidymodels?  Consistency",
+    "text": "Why tidymodels?  Consistency\n\nmtcars\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4\n#&gt;                     carb\n#&gt; Mazda RX4              4\n#&gt; Mazda RX4 Wag          4\n#&gt; Datsun 710             1\n#&gt; Hornet 4 Drive         1\n#&gt; Hornet Sportabout      2\n#&gt; Valiant                1\n#&gt; Duster 360             4\n#&gt; Merc 240D              2\n#&gt; Merc 230               2\n#&gt; Merc 280               4\n#&gt; Merc 280C              4\n#&gt; Merc 450SE             3\n#&gt; Merc 450SL             3\n#&gt; Merc 450SLC            3\n#&gt; Cadillac Fleetwood     4\n#&gt; Lincoln Continental    4\n#&gt; Chrysler Imperial      4\n#&gt; Fiat 128               1\n#&gt; Honda Civic            2\n#&gt; Toyota Corolla         1\n#&gt; Toyota Corona          1\n#&gt; Dodge Challenger       2\n#&gt; AMC Javelin            2\n#&gt; Camaro Z28             4\n#&gt; Pontiac Firebird       2\n#&gt; Fiat X1-9              1\n#&gt; Porsche 914-2          2\n#&gt; Lotus Europa           2\n#&gt; Ford Pantera L         4\n#&gt; Ferrari Dino           6\n#&gt; Maserati Bora          8\n#&gt; Volvo 142E             2"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-consistency-2",
+    "href": "index.html#why-tidymodels-consistency-2",
+    "title": "",
+    "section": "Why tidymodels?  Consistency",
+    "text": "Why tidymodels?  Consistency\n\n\nWith lm():\n\nmodel &lt;- \n  lm(mpg ~ ., mtcars)\n\n\nWith tidymodels:\n\nmodel &lt;-\n  linear_reg() %&gt;%\n  set_engine(\"lm\") %&gt;%\n  fit(mpg ~ ., mtcars)"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-consistency-3",
+    "href": "index.html#why-tidymodels-consistency-3",
+    "title": "",
+    "section": "Why tidymodels?  Consistency",
+    "text": "Why tidymodels?  Consistency\n\n\nWith glmnet:\n\nmodel &lt;- \n  glmnet(\n    as.matrix(mtcars[2:11]),\n    mtcars$mpg\n  )\n\n\nWith tidymodels:\n\nmodel &lt;-\n  linear_reg() %&gt;%\n  set_engine(\"glmnet\") %&gt;%\n  fit(mpg ~ ., mtcars)"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-consistency-4",
+    "href": "index.html#why-tidymodels-consistency-4",
+    "title": "",
+    "section": "Why tidymodels?  Consistency",
+    "text": "Why tidymodels?  Consistency\n\n\nWith h2o:\n\nh2o.init()\nas.h2o(mtcars, \"cars\")\n\nmodel &lt;- \n  h2o.glm(\n    x = colnames(mtcars[2:11]), \n    y = \"mpg\",\n    \"cars\"\n  )\n\n\nWith tidymodels:\n\nmodel &lt;-\n  linear_reg() %&gt;%\n  set_engine(\"h2o\") %&gt;%\n  fit(mpg ~ ., mtcars)"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-safety1",
+    "href": "index.html#why-tidymodels-safety1",
+    "title": "",
+    "section": "Why tidymodels?  Safety1",
+    "text": "Why tidymodels?  Safety1\n10.1097/01.psy.0000127692.23278.a9, 10.1016/j.patter.2023.100804, 10.1609/aaai.v32i1.11694"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-safety2",
+    "href": "index.html#why-tidymodels-safety2",
+    "title": "",
+    "section": "Why tidymodels?  Safety1",
+    "text": "Why tidymodels?  Safety1\n\nOverfitting leads to analysts believing models are more performant than they actually are.\n\n\n\nA 2023 review found data leakage to be “a widespread failure mode in machine-learning (ML)-based science.”\n\n\n\n\nImplementations of the same machine learning model give differing results, resulting in irreproducibility of modeling results.\n\n\n10.1097/01.psy.0000127692.23278.a9, 10.1016/j.patter.2023.100804, 10.1609/aaai.v32i1.11694"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-completeness",
+    "href": "index.html#why-tidymodels-completeness",
+    "title": "",
+    "section": "Why tidymodels?  Completeness",
+    "text": "Why tidymodels?  Completeness"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-completeness-1",
+    "href": "index.html#why-tidymodels-completeness-1",
+    "title": "",
+    "section": "Why tidymodels?  Completeness",
+    "text": "Why tidymodels?  Completeness\nBuilt-in support for 99 machine learning models!\n\n\n#&gt; # A tibble: 99 × 2\n#&gt;    name       engine   \n#&gt;    &lt;chr&gt;      &lt;chr&gt;    \n#&gt;  1 boost_tree C5.0     \n#&gt;  2 boost_tree h2o      \n#&gt;  3 boost_tree h2o_gbm  \n#&gt;  4 boost_tree lightgbm \n#&gt;  5 boost_tree mboost   \n#&gt;  6 boost_tree spark    \n#&gt;  7 boost_tree xgboost  \n#&gt;  8 null_model parsnip  \n#&gt;  9 svm_linear LiblineaR\n#&gt; 10 svm_linear kernlab  \n#&gt; # ℹ 89 more rows"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-completeness-2",
+    "href": "index.html#why-tidymodels-completeness-2",
+    "title": "",
+    "section": "Why tidymodels?  Completeness",
+    "text": "Why tidymodels?  Completeness\nBuilt-in support for 102 data pre-processing techniques!\n\n\n#&gt; # A tibble: 102 × 1\n#&gt;    name               \n#&gt;    &lt;chr&gt;              \n#&gt;  1 step_rename_at     \n#&gt;  2 step_scale         \n#&gt;  3 step_kpca          \n#&gt;  4 step_percentile    \n#&gt;  5 step_depth         \n#&gt;  6 step_poly_bernstein\n#&gt;  7 step_impute_linear \n#&gt;  8 step_novel         \n#&gt;  9 step_nnmf_sparse   \n#&gt; 10 step_slice         \n#&gt; # ℹ 92 more rows"
+  },
+  {
+    "objectID": "index.html#why-tidymodels-extensibility",
+    "href": "index.html#why-tidymodels-extensibility",
+    "title": "",
+    "section": "Why tidymodels?  Extensibility",
+    "text": "Why tidymodels?  Extensibility\n\nCan’t find the technique you need?"
+  },
+  {
+    "objectID": "index.html#coming-to-tidymodels-survival-analysis",
+    "href": "index.html#coming-to-tidymodels-survival-analysis",
+    "title": "",
+    "section": "Coming to tidymodels: Survival analysis",
+    "text": "Coming to tidymodels: Survival analysis\n\n\nFor time-to-event data with censoring\nRelease cascade underway!\nDedicated models and metrics\nGeneral framework goodies unlocked 🎉"
+  },
+  {
+    "objectID": "index.html#try-it-out-yourself",
+    "href": "index.html#try-it-out-yourself",
+    "title": "",
+    "section": "Try it out yourself",
+    "text": "Try it out yourself\n Install the release version\npak::pak(\"tidymodels\")\n\n\nInstall the development version of\npak::pak(paste0(\"tidymodels/\", c(\"tune\", \"finetune\", \"workflowsets\")))"
+  },
+  {
+    "objectID": "index.html#customer-churn",
+    "href": "index.html#customer-churn",
+    "title": "",
+    "section": "Customer churn",
+    "text": "Customer churn\n\nwa_churn\n\n\n\n#&gt; # A tibble: 7,032 × 18\n#&gt;   churn female senior_citizen partner dependents tenure phone_service\n#&gt;   &lt;fct&gt;  &lt;dbl&gt;          &lt;int&gt;   &lt;dbl&gt;      &lt;dbl&gt;  &lt;int&gt;         &lt;dbl&gt;\n#&gt; 1 No         1              0       1          0      1             0\n#&gt; 2 No         0              0       0          0     34             1\n#&gt; 3 Yes        0              0       0          0      2             1\n#&gt; 4 No         0              0       0          0     45             0\n#&gt; 5 Yes        1              0       0          0      2             1\n#&gt; 6 Yes        1              0       0          0      8             1\n#&gt; # ℹ 7,026 more rows\n#&gt; # ℹ 11 more variables: multiple_lines &lt;chr&gt;, internet_service &lt;fct&gt;,\n#&gt; #   online_security &lt;chr&gt;, online_backup &lt;chr&gt;,\n#&gt; #   device_protection &lt;chr&gt;, tech_support &lt;chr&gt;, streaming_tv &lt;chr&gt;,\n#&gt; #   streaming_movies &lt;chr&gt;, paperless_billing &lt;dbl&gt;,\n#&gt; #   payment_method &lt;fct&gt;, monthly_charges &lt;dbl&gt;\n\n\n\n\n\n\n\n\n\n\n\nSee /example/churn.R for the actual code to generate this data!"
+  },
+  {
+    "objectID": "index.html#customer-churn-1",
+    "href": "index.html#customer-churn-1",
+    "title": "",
+    "section": "Customer churn",
+    "text": "Customer churn\n\n\nAround 26.6% of customers have churned."
+  },
+  {
+    "objectID": "index.html#customer-churn-2",
+    "href": "index.html#customer-churn-2",
+    "title": "",
+    "section": "Customer churn",
+    "text": "Customer churn\n\ntelco_churn &lt;- wa_churn %&gt;% \n  mutate(\n    churn_surv = Surv(tenure, if_else(churn == \"Yes\", 1, 0)),\n    .keep = \"unused\"\n  )"
+  },
+  {
+    "objectID": "index.html#split-the-data",
+    "href": "index.html#split-the-data",
+    "title": "",
+    "section": "Split the data",
+    "text": "Split the data\n\nset.seed(403)\ntelco_split &lt;- initial_split(telco_churn)\ntelco_train &lt;- training(telco_split)\ntelco_test &lt;- testing(telco_split)\n\ntelco_rs &lt;- vfold_cv(telco_train)"
+  },
+  {
+    "objectID": "index.html#customer-churn-3",
+    "href": "index.html#customer-churn-3",
+    "title": "",
+    "section": "Customer churn",
+    "text": "Customer churn"
+  },
+  {
+    "objectID": "index.html#customer-churn-4",
+    "href": "index.html#customer-churn-4",
+    "title": "",
+    "section": "Customer churn",
+    "text": "Customer churn"
+  },
+  {
+    "objectID": "index.html#preprocessing",
+    "href": "index.html#preprocessing",
+    "title": "",
+    "section": "Preprocessing",
+    "text": "Preprocessing\n\ntelco_rec &lt;- recipe(churn_surv ~ ., data = telco_train) %&gt;% \n  step_zv(all_predictors()) \n\ntelco_rec_streaming &lt;- telco_rec %&gt;%\n  step_mutate(\n    streaming = factor(if_else(streaming_tv == \"Yes\" | \n                                 streaming_movies == \"Yes\", \"Yes\", \"No\"))\n  ) %&gt;% \n  step_rm(streaming_tv, streaming_movies)"
+  },
+  {
+    "objectID": "index.html#baseline-model",
+    "href": "index.html#baseline-model",
+    "title": "",
+    "section": "Baseline model",
+    "text": "Baseline model\n\nspec_surv_reg &lt;- survival_reg()\n\nwflow_surv_reg &lt;- workflow() %&gt;%\n  add_recipe(telco_rec) %&gt;%\n  add_model(spec_surv_reg)"
+  },
+  {
+    "objectID": "index.html#baseline-model-1",
+    "href": "index.html#baseline-model-1",
+    "title": "",
+    "section": "Baseline model",
+    "text": "Baseline model\n\nset.seed(12)\nsr_rs_fit &lt;- fit_resamples(\n  wflow_surv_reg, \n  telco_rs, \n  metrics = metric_set(brier_survival_integrated,\n                       brier_survival,\n                       roc_auc_survival,\n                       concordance_survival), \n  eval_time = c(1, 6, 12, 18, 24, 36, 48, 60)\n)"
+  },
+  {
+    "objectID": "index.html#baseline-model-2",
+    "href": "index.html#baseline-model-2",
+    "title": "",
+    "section": "Baseline model",
+    "text": "Baseline model\n\ncollect_metrics(sr_rs_fit)\n#&gt; # A tibble: 18 × 7\n#&gt;    .metric          .estimator .eval_time   mean     n std_err .config\n#&gt;    &lt;chr&gt;            &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;  \n#&gt;  1 brier_survival   standard            1 0.0470    10 0.00303 Prepro…\n#&gt;  2 roc_auc_survival standard            1 0.842     10 0.0102  Prepro…\n#&gt;  3 brier_survival   standard            6 0.0792    10 0.00224 Prepro…\n#&gt;  4 roc_auc_survival standard            6 0.853     10 0.00517 Prepro…\n#&gt;  5 brier_survival   standard           12 0.0930    10 0.00206 Prepro…\n#&gt;  6 roc_auc_survival standard           12 0.864     10 0.00567 Prepro…\n#&gt;  7 brier_survival   standard           18 0.0996    10 0.00187 Prepro…\n#&gt;  8 roc_auc_survival standard           18 0.878     10 0.00525 Prepro…\n#&gt;  9 brier_survival   standard           24 0.105     10 0.00197 Prepro…\n#&gt; 10 roc_auc_survival standard           24 0.884     10 0.00484 Prepro…\n#&gt; 11 brier_survival   standard           36 0.107     10 0.00305 Prepro…\n#&gt; 12 roc_auc_survival standard           36 0.903     10 0.00546 Prepro…\n#&gt; 13 brier_survival   standard           48 0.109     10 0.00341 Prepro…\n#&gt; 14 roc_auc_survival standard           48 0.916     10 0.00554 Prepro…\n#&gt; 15 brier_survival   standard           60 0.103     10 0.00345 Prepro…\n#&gt; 16 roc_auc_survival standard           60 0.946     10 0.00452 Prepro…\n#&gt; 17 brier_survival_… standard           NA 0.0979    10 0.00173 Prepro…\n#&gt; 18 concordance_sur… standard           NA 0.826     10 0.00440 Prepro…\n\nshow_best(sr_rs_fit, metric = \"brier_survival_integrated\")\n#&gt; # A tibble: 1 × 7\n#&gt;   .metric           .estimator .eval_time   mean     n std_err .config\n#&gt;   &lt;chr&gt;             &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;  \n#&gt; 1 brier_survival_i… standard           NA 0.0979    10 0.00173 Prepro…"
+  },
+  {
+    "objectID": "index.html#tune-a-model",
+    "href": "index.html#tune-a-model",
+    "title": "",
+    "section": "Tune a model",
+    "text": "Tune a model\n\nspec_tree &lt;- \n  decision_tree(\n    tree_depth = tune(), \n    min_n = tune(),\n    cost_complexity = tune()\n  ) %&gt;% \n  set_engine(\"rpart\") %&gt;%\n  set_mode(\"censored regression\")\n\nwflow_tree &lt;- workflow() %&gt;%\n  add_recipe(telco_rec) %&gt;%\n  add_model(spec_tree)"
+  },
+  {
+    "objectID": "index.html#tune-a-model-1",
+    "href": "index.html#tune-a-model-1",
+    "title": "",
+    "section": "Tune a model",
+    "text": "Tune a model\n\nset.seed(12) \ntree_res &lt;- tune_grid(\n  wflow_tree, \n  telco_rs, \n  grid = 10,\n  metrics = metric_set(brier_survival_integrated, \n                       brier_survival,\n                       roc_auc_survival, \n                       concordance_survival), \n  eval_time = c(1, 6, 12, 18, 24, 36, 48, 60)\n)"
+  },
+  {
+    "objectID": "index.html#tune-a-model-2",
+    "href": "index.html#tune-a-model-2",
+    "title": "",
+    "section": "Tune a model",
+    "text": "Tune a model\n\nshow_best(tree_res, metric = \"brier_survival_integrated\")\n#&gt; # A tibble: 5 × 10\n#&gt;   cost_complexity tree_depth min_n .metric .estimator .eval_time  mean\n#&gt;             &lt;dbl&gt;      &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;\n#&gt; 1        2.06e- 5          7     4 brier_… standard           NA 0.110\n#&gt; 2        1.15e- 6         13    37 brier_… standard           NA 0.111\n#&gt; 3        1.95e- 7          6    18 brier_… standard           NA 0.112\n#&gt; 4        2.73e- 9         15    32 brier_… standard           NA 0.113\n#&gt; 5        3.86e-10         12    22 brier_… standard           NA 0.114\n#&gt; # ℹ 3 more variables: n &lt;int&gt;, std_err &lt;dbl&gt;, .config &lt;chr&gt;"
+  },
+  {
+    "objectID": "index.html#finalize-a-model",
+    "href": "index.html#finalize-a-model",
+    "title": "",
+    "section": "Finalize a model",
+    "text": "Finalize a model\n\nbest_param &lt;- select_best(tree_res, metric = \"brier_survival_integrated\")\nwflow_tree &lt;- finalize_workflow(wflow_tree, best_param)\n\nchurn_mod &lt;- fit(wflow_tree, telco_train)\n\npredict(churn_mod, telco_test, type = \"time\")\n#&gt; # A tibble: 1,758 × 1\n#&gt;    .pred_time\n#&gt;         &lt;dbl&gt;\n#&gt;  1     0.211 \n#&gt;  2     1.95  \n#&gt;  3     0.0317\n#&gt;  4     0.211 \n#&gt;  5     0.325 \n#&gt;  6     5.37  \n#&gt;  7     0.349 \n#&gt;  8     3.27  \n#&gt;  9     1.84  \n#&gt; 10     5.37  \n#&gt; # ℹ 1,748 more rows"
+  },
+  {
+    "objectID": "index.html#workflowsets---the-kitchen-sink",
+    "href": "index.html#workflowsets---the-kitchen-sink",
+    "title": "",
+    "section": "workflowsets - The kitchen sink",
+    "text": "workflowsets - The kitchen sink\n\n\nPreprocessors:\n\nformula\ncombine streaming indicators\ncenter and scale predictors\nPCA + center and scale predictors\n\n\n…and models:\n\nparametric survival regression\nproportional hazards model\ndecision tree\nrandom forest\nbagged decision tree\nboosted tree"
+  },
+  {
+    "objectID": "index.html#resources-1",
+    "href": "index.html#resources-1",
+    "title": "",
+    "section": "Resources",
+    "text": "Resources\n\n\n\ntidyverse: r4ds.hadley.nz"
+  },
+  {
+    "objectID": "index.html#resources-2",
+    "href": "index.html#resources-2",
+    "title": "",
+    "section": "Resources",
+    "text": "Resources\n\n\n\ntidyverse: r4ds.hadley.nz\ntidymodels: tmwr.org"
+  },
+  {
+    "objectID": "index.html#resources-3",
+    "href": "index.html#resources-3",
+    "title": "",
+    "section": "Resources",
+    "text": "Resources\n\ntidyverse: r4ds.hadley.nz\ntidymodels: tmwr.org\nSlides and code:\n\n\ngithub.com/hfrick/2024-tidymodels-emdserono\n\n\nThank you!\n\n\ngithub.com/hfrick/2024-tidymodels-emdserono"
+  }
+]
